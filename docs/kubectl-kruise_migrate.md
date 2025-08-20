@@ -6,13 +6,14 @@ Migrate from K8s original workloads to Kruise workloads
 
 Migrate from K8s original workloads to Kruise workloads
 
-
+```
 kubectl-kruise migrate [DST_KIND] --from [SRC_KIND] [flags]
+```
 
 
 ### Examples
 
-
+```
 
 	# Create an empty CloneSet from an existing Deployment.
 	kubectl-kruise migrate CloneSet --from Deployment -n default --dst-name deployment-name --create
@@ -26,11 +27,12 @@ kubectl-kruise migrate [DST_KIND] --from [SRC_KIND] [flags]
     # Migrate pods from an existing DaemonSet to an AdvancedDaemonSet.
     kubectl-kruise migrate AdvancedDaemonSet --from DaemonSet -n default --src-name ds-name --dst-name ads-name --max-surge=1
 
-
+```
 
 
 ### Options
 
+```
 
       --copy                    Copy replicas from src workload when create.
       --create                  Create dst workload with replicas=0 from src workload.
@@ -41,10 +43,12 @@ kubectl-kruise migrate [DST_KIND] --from [SRC_KIND] [flags]
       --replicas int32          The replicas needs to migrate, -1 indicates all replicas in src workload. (default -1)
       --src-name string         Name of the source workload.
       --timeout-seconds int32   Timeout seconds for migration, -1 indicates no limited. (default -1)
+```
 
 
 ### Options inherited from parent commands
 
+```
 
       --as string                      Username to impersonate for the operation. User could be a regular user or a service account in a namespace.
       --as-group stringArray           Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
@@ -70,7 +74,7 @@ kubectl-kruise migrate [DST_KIND] --from [SRC_KIND] [flags]
       --user string                    The name of the kubeconfig user to use
       --username string                Username for basic authentication to the API server
       --warnings-as-errors             Treat warnings received from the server as errors and exit with a non-zero exit code
-
+```
 
 ### SEE ALSO
 
